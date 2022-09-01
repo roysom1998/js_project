@@ -3,6 +3,7 @@ getUpdate = () => {
     desc = document.getElementById("description").value;
     if (localStorage.getItem("itemsJson") == null) {
         jsonItemsArray = [];
+        // pushing the netered value into array
         jsonItemsArray.push([item, desc]);
         localStorage.setItem("itemsJson", JSON.stringify(jsonItemsArray));
     }
@@ -18,10 +19,12 @@ getUpdate = () => {
 update = () => {
     if (localStorage.getItem("itemsJson") == null) {
         jsonItemsArray = [];
+        // if the itemsJson is null the it  will set the empty array in localstorage
         localStorage.setItem("itemsJson", JSON.stringify(jsonItemsArray));
     }
     else {
         itemArraystr = localStorage.getItem("itemsJson");
+        // parse the stringify json into array
         jsonItemsArray = JSON.parse(itemArraystr);
     }
     // for populating the table
